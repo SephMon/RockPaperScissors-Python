@@ -43,10 +43,15 @@ class RockPaperScissors:
         self.play_again = self.ask_to_play_again
         
     def get_player_choice(self):
-        pass
-    
+        print("Input choice: press 0 for rock,1 for paper or 2 for scissors: ")
+        self.player_choice = self.check_player_input()
+        return self.player_choice
+
     def check_for_out_of_bounds_choice(self):
-        pass
+        if self.player_choice < 0 or self.player_choice > 2:
+            print("ERROR WITH CHOICE! PLEASE ONLY CHOOSE OPTION 0,1 OR 2!")
+        else:
+            self.check_who_won()
     
     def get_number_of_games(self):
         pass
@@ -82,7 +87,12 @@ class RockPaperScissors:
         pass
 
     def check_player_input(self):
-        pass
+        while True:
+            try:
+                input_ = int(input(""))
+                return input_
+            except ValueError:
+                print("INVALID INPUT,TRY AGAIN!")
 
     
 
